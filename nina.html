@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nina Simone</title>
+	<style>
+		/* CSS styles */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #F7EEDB;
+		}
+
+		.header {
+			background-color: #6B3E26;
+			color: white;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.main {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		.photo {
+			display: block;
+			margin: 20px auto;
+			max-width: 100%;
+		}
+
+		.bio {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+
+		.button {
+			background-color: #6B3E26;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		.button:hover {
+			background-color: #A8725C;
+		}
+
+		* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+	</style>
+	<script>
+		// JavaScript code
+		function showQuote() {
+			const quotes = [
+				"I'll tell you what freedom is to me: no fear!",
+				"Music is a powerful tool in galvanizing people and I think you see a lot of that in movements and struggles.",
+				"I'm just someone who likes cooking and for whom sharing food is a form of expression."
+			];
+			const quote = quotes[Math.floor(Math.random() * quotes.length)];
+			document.getElementById("quote").textContent = quote;
+		}
+
+		let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+	</script>
+</head>
+<body>
+	<div class="header">
+		<h1>Nina Simone</h1>
+		<p>Legendary musician, civil rights activist, and artist</p>
+	</div>
+
+	<div class="slideshow-container">
+
+		<!-- Full-width images with number and caption text -->
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="https://i.guim.co.uk/img/media/6c7a7598e56b3525df1f3123490d300143d5f02f/0_32_3000_1796/master/3000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=48620cf67930e4ee2f629c43b3e0f941" style="width:100%">
+		  <div class="text">Caption Text</div>
+		</div>
+	  
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="https://www.jazzmessengers.com/45824/theamazingninasimone.jpg" style="width:100%">
+		  <div class="text">Caption Two</div>
+		</div>
+	  
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="https://cdn.shopify.com/s/files/1/0225/2528/0331/products/230351-002_PRM_1_2000x.jpg?v=1637262929" style="width:100%">
+		  <div class="text">Caption Three</div>
+		</div>
+	  
+		<!-- Next and previous buttons -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	  </div>
+	  <br>
+	  
+	  <!-- The dots/circles -->
+	  <div style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+	  </div>
+	
+	<div class="main">
+		<img class="photo" src="https://www.udiscovermusic.com/wp-content/uploads/2021/09/Nina_Simone-Feeling-Good.jpg" alt="Nina Simone">
+		<p class="bio">Nina Simone was an American singer, songwriter, musician, and civil rights activist. Her music spanned a broad range of musical styles including classical, jazz, blues, folk, R&B, gospel, and pop. She is known for her powerful and soulful voice and her lyrics often dealt with themes of social injustice and civil rights.</p>
+		<button class="button" onclick="showQuote()">Show a Nina Simone quote</button>
+		<p id="quote"></p>
+	</div>
+</body>
+</html>
